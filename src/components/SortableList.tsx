@@ -2,7 +2,9 @@
 import ItemList from "./ItemList";
 import SortOptions from "./SortOptions";
 
-export default function SortableList() {
+interface SortableListProps {}
+
+export const SortableList: React.FC<SortableListProps> = () => {
   return (
     <section className="SortableList">
       <h1>Shopping list</h1>
@@ -10,4 +12,4 @@ export default function SortableList() {
       <ItemList whetherBought={false} />
     </section>
   );
-}
+};
