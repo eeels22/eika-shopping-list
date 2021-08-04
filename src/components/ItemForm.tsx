@@ -22,7 +22,7 @@ export const ItemForm: React.FC<ItemFormProps> = ({ toggleForm }) => {
   // Local state
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  const [touched, setTouched] = React.useState<Touched>({});
+  const [touched, setTouched] = useState<Touched>({});
 
   // Const
   const errors = getErrors(name, price);
