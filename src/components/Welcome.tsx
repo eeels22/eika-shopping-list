@@ -1,7 +1,13 @@
+import React from "react";
+
 // Project files
 import WelcomeImage from "../assets/images/wall-decorations.jpg";
 
-export default function Welcome({ newUser }) {
+interface WelcomeProps {
+  newUser: boolean;
+}
+
+export const Welcome: React.FC<WelcomeProps> = ({ newUser }) => {
   // Components
   const newUserText = (
     <p>
@@ -33,4 +39,4 @@ export default function Welcome({ newUser }) {
       {welcomeParagraph}
     </section>
   );
-}
+};
