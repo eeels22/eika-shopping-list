@@ -2,7 +2,6 @@
 import { useState } from "react";
 
 // Project files
-import "./styles/style.css";
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
 import SortableList from "./components/SortableList";
