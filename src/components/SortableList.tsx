@@ -1,6 +1,6 @@
 // Project files
 import ItemList from "./ItemList";
-import SortOptions from "./SortOptions";
+import { SortOptions } from "./SortOptions";
 
 interface SortableListProps {}
 
