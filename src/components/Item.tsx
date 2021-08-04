@@ -3,8 +3,13 @@ import { useState } from "react";
 
 // Project files
 import { useList } from "../hooks/listContext";
+import { IItem } from "../types/IItem";
 
-export default function Item({ item }) {
+interface ItemProps {
+  item: IItem;
+}
+
+export const Item: React.FC<ItemProps> = ({ item }) => {
   // Global state
   const { dispatch } = useList();
 
@@ -29,7 +34,7 @@ export default function Item({ item }) {
           type="checkbox"
           onChange={handleClick}
           className="item-checkbox"
-          value={bought}
+          value={bought.toString()}
           checked={bought}
         />
         <span className="checkbox"></span>
@@ -37,4 +42,4 @@ export default function Item({ item }) {
       </label>
     </li>
   );
-}
+};

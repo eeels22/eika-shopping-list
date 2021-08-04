@@ -1,5 +1,5 @@
 // Project files
-import Item from "./Item";
+import { Item } from "./Item";
 import { useList } from "../hooks/listContext";
 import { useSortOption } from "../hooks/sortOptionContext";
 import { compareName, comparePrice } from "../utilities/compare";
