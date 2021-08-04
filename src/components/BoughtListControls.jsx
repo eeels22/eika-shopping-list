@@ -4,7 +4,7 @@ import { useState } from "react";
 // Project files
 import closedEye from "../assets/images/closed-eye.svg";
 import openEye from "../assets/images/open-eye.svg";
-import ItemList from "./ItemList";
+import { ItemList } from "./ItemList";
 
 export default function BoughtListControls() {
   // Local state

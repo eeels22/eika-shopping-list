@@ -8,11 +8,7 @@ import { SortableList } from "./components/SortableList";
 import { ItemForm } from "./components/ItemForm";
 import BoughtListControls from "./components/BoughtListControls";
 import { useList } from "./hooks/listContext";
-
-// Types
-interface Item {
-  bought: boolean;
-}
+import { IItem } from "./types/IItem";
 
 export default function App() {
   // Global state
@@ -22,7 +18,7 @@ export default function App() {
   const [addingItem, setAddingItem] = useState(false);
 
   // Derived state
-  const toBuyList = list.filter((item: Item) => item.bought === false);
+  const toBuyList = list.filter((item: IItem) => item.bought === false);
   const itemsToBuy = toBuyList.length !== 0;
   const newUser = list.length === 0;
 
