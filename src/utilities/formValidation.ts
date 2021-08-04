@@ -1,15 +1,22 @@
-const validPrice = (value) => {
+// Helper functions
+const validPrice = (value: string) => {
   const containsOnlyDigits = /^\d+$/.test(value);
   return containsOnlyDigits;
 };
 
-const validName = (value) => {
+const validName = (value: string) => {
   const isNotOnlyWhitespace = value.trim().length > 0;
   return isNotOnlyWhitespace;
 };
 
-export const getErrors = (name, price) => {
-  const result = {};
+// Interface
+interface Result {
+  name?: string;
+  price?: string;
+}
+
+export const getErrors = (name: string, price: string) => {
+  const result: Result = {};
   if (!name) {
     result.name = "Name is required.";
   } else if (!validName(name)) {
