@@ -4,7 +4,7 @@
 
 A shopping list app that lets users keep track of things to buy at the EIKA store.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the TypeScript template.
 
 ### Features
 
@@ -30,7 +30,7 @@ The app is hosted at https://eika-shopping-list-app.web.app/
 
 ## Installation
 
-Clone this repository: `git clone https://github.com/eeels22/shopping-list.git`
+Clone this repository: `git clone https://github.com/eeels22/eika-shopping-list.git`
 
 To run the app in the development mode, in the project directory, run: `npm start`
 
@@ -46,9 +46,10 @@ See the React section about [deployment](https://facebook.github.io/create-react
 
 ## Dependencies
 
-- "react": "^17.0.2",
-- "react-dom": "^17.0.2",
+- "react": "^17.0.2"
+- "react-dom": "^17.0.2"
 - "react-scripts": "4.0.3"
+- "typescript": "^4.1.2"
 
 ## Using the app
 
