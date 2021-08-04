@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useList } from "../hooks/listContext";
 import { IItem } from "../types/IItem";
 
+// Interface
 interface ItemProps {
   item: IItem;
 }

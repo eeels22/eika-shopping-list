@@ -1,9 +1,7 @@
 // Project files
 import { useSortOption } from "../hooks/sortOptionContext";
 
-interface SortOptionsProps {}
-
-export const SortOptions: React.FC<SortOptionsProps> = () => {
+export const SortOptions: React.FC<{}> = () => {
   // Global state
   const { sortOption, updateSortOption } = useSortOption();
 

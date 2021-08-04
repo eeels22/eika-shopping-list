@@ -5,6 +5,7 @@ import { useSortOption } from "../hooks/sortOptionContext";
 import { compareName, comparePrice } from "../utilities/compare";
 import { IItem } from "../types/IItem";
 
+// Interface
 interface ItemListProps {
   whetherBought: boolean;
 }

@@ -2,9 +2,7 @@
 import { ItemList } from "./ItemList";
 import { SortOptions } from "./SortOptions";
 
-interface SortableListProps {}
-
-export const SortableList: React.FC<SortableListProps> = () => {
+export const SortableList: React.FC<{}> = () => {
   return (
     <section className="SortableList">
       <h1>Shopping list</h1>

@@ -1,8 +1,7 @@
-import React from "react";
-
 // Project files
 import WelcomeImage from "../assets/images/wall-decorations.jpg";
 
+// Interface
 interface WelcomeProps {
   newUser: boolean;
 }
