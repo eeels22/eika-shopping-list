@@ -2,9 +2,9 @@
 import { IItem } from "../types/IItem";
 
 // Types
-type Action =
-  | { type: "add"; id: string; name: string; price: string; bought: boolean }
-  | { type: "markAsBought"; id: string; bought: boolean };
+export type Action =
+  | { type: "add"; id: number; name: string; price: string; bought: boolean }
+  | { type: "markAsBought"; id: number; bought: boolean };
 
 type List = IItem[];
 
