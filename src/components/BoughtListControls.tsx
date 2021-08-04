@@ -6,7 +6,7 @@ import closedEye from "../assets/images/closed-eye.svg";
 import openEye from "../assets/images/open-eye.svg";
 import { ItemList } from "./ItemList";
 
-export default function BoughtListControls() {
+export const BoughtListControls: React.FC<{}> = () => {
   // Local state
   const [showBought, setShowBougt] = useState(false);
 
@@ -30,4 +30,4 @@ export default function BoughtListControls() {
       {showBought && <ItemList whetherBought={true} />}
     </section>
   );
-}
+};

@@ -6,7 +6,7 @@ import { Header } from "./components/Header";
 import { Welcome } from "./components/Welcome";
 import { SortableList } from "./components/SortableList";
 import { ItemForm } from "./components/ItemForm";
-import BoughtListControls from "./components/BoughtListControls";
+import { BoughtListControls } from "./components/BoughtListControls";
 import { useList } from "./hooks/listContext";
 import { IItem } from "./types/IItem";
 
