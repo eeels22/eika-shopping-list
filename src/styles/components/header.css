@@ -1,0 +1,8 @@
+header {
+  margin-bottom: var(--space-big);
+}
+
+.logo {
+  height: 30px;
+  width: 75px;
+}
