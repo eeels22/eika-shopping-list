@@ -12,14 +12,14 @@ export const SortOptions: React.FC<{}> = () => {
     <section className="sort-options">
       <span>Sort by:</span>
       <button
-        onClick={() => updateSortOption}
+        onClick={() => updateSortOption(sortOption)}
         disabled={disableSortOption("name")}
         className="button-option"
       >
         Name
       </button>
       <button
-        onClick={() => updateSortOption}
+        onClick={() => updateSortOption(sortOption)}
         disabled={disableSortOption("price")}
         className="button-option"
       >

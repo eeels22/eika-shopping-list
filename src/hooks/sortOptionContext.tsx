@@ -4,7 +4,7 @@ import { createContext, useState, useContext } from "react";
 // Type
 type SortOptionContextType = {
   sortOption: string;
-  updateSortOption: React.Dispatch<React.SetStateAction<string>>;
+  updateSortOption: (sortOption: string) => void;
 };
 
 // Context object
@@ -15,12 +15,9 @@ export const SortOptionProvider: React.FC<{}> = ({ children }) => {
   const [sortOption, setSortOption] = useState("");
 
   // Function
-  const updateSortOption = () => {
-    function toggleSort(sortOption: string) {
-      const newOption = sortOption === "name" ? "price" : "name";
-      setSortOption(newOption);
-    }
-    toggleSort(sortOption);
+  const updateSortOption = (sortOption: string) => {
+    const newOption = sortOption === "name" ? "price" : "name";
+    setSortOption(newOption);
   };
 
   const contextValue = { sortOption, updateSortOption };
