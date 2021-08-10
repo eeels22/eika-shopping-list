@@ -1,3 +1,6 @@
+// NPM package
+import { Reducer } from "react";
+
 // Project files
 import { IItem } from "../types/IItem";
 
@@ -8,12 +11,7 @@ export type Action =
 
 type List = IItem[];
 
-// Function
-function throwUnhandledAction(action: Action) {
-  throw new Error("Unhandled action: " + action.type);
-}
-
-export default function ListReducer(list: List, action: Action) {
+export const ListReducer: Reducer<List, Action> = (list, action) => {
   switch (action.type) {
     case "add":
       const { id, name, price, bought } = action;
@@ -24,7 +22,5 @@ export default function ListReducer(list: List, action: Action) {
         item.id === id ? { ...item, bought: !bought } : item
       );
     }
-    default:
-      throwUnhandledAction(action);
   }
-}
+};
