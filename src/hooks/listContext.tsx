@@ -2,7 +2,7 @@
 import React, { createContext, useReducer, useEffect, useContext } from "react";
 
 //Project files
-import ListReducer from "./listReducer";
+import { ListReducer } from "./listReducer";
 import { IItem } from "../types/IItem";
 import { Action } from "./listReducer";
 
@@ -32,11 +32,7 @@ try {
   initialList = [];
 }
 
-interface ListProviderProps {
-  children: React.ReactNode;
-}
-
-export const ListProvider: React.FC<ListProviderProps> = ({ children }) => {
+export const ListProvider: React.FC<{}> = ({ children }) => {
   const [list, dispatch] = useReducer(ListReducer, initialList);
 
   // update localStorage any time the list changes
