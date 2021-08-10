@@ -1,0 +1,60 @@
+/* button-primary
+----------------------------*/
+.button-primary {
+  display: block;
+  border-radius: 100px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.8em;
+  margin: 1.5em 0;
+  font-weight: 700;
+  width: 15em;
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary-shade);
+  cursor: pointer;
+}
+
+.button-primary:disabled {
+  background-color: var(--color-v-light-grey);
+  color: var(--color-medium-grey);
+  cursor: not-allowed;
+}
+
+/* button-subtle
+----------------------------*/
+.button-subtle {
+  display: block;
+  background: none;
+  border: none;
+  font-weight: 700;
+  text-decoration: underline;
+  justify-self: center;
+}
+
+.button-subtle:hover {
+  cursor: pointer;
+}
+
+/* button-option
+----------------------------*/
+.button-option {
+  background: none;
+  border: none;
+  font-weight: 700;
+  color: var(--color-medium-grey);
+  margin-left: 1em;
+}
+
+.button-option:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button-option:disabled {
+  text-decoration: underline;
+  color: var(--v-dark-grey);
+  cursor: default;
+}

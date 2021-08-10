@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# EIKA shopping list app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+A shopping list app that lets users keep track of things to buy at the EIKA store.
 
-In the project directory, you can run:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the TypeScript template.
 
-### `yarn start`
+### Features
 
-Runs the app in the development mode.\
+You can:
+
+- Add a shopping item with a name and price.
+- Mark a shopping item as bought.
+- Toggle the display of bought shopping items.
+- Close and reopen the page without losing your list.
+- Sort items by name or price.
+
+### Hosted app
+
+The app is hosted at https://eika-shopping-list-app.web.app/
+
+## Design prototype
+
+[View the design at Figma.](https://www.figma.com/file/brKqUwVgro4pEbvCf7maE0/Shopping-list?node-id=0%3A1)
+
+## Component hierarchy
+
+[View the component hierarchy at Whimsical.](https://whimsical.com/shopping-list-KTu2Z8eFMtf9E3psbzR2Xm@2Ux7TurymMSmk6jWXHKT)
+
+## Installation
+
+Clone this repository: `git clone https://github.com/eeels22/eika-shopping-list.git`
+
+To run the app in the development mode, in the project directory, run: `npm start`
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Build and deploy
 
-### `yarn test`
+`npm run build`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
-### `yarn build`
+See the React section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- "react": "^17.0.2"
+- "react-dom": "^17.0.2"
+- "react-scripts": "4.0.3"
+- "typescript": "^4.1.2"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Using the app
 
-### `yarn eject`
+### Welcome screen
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If it's your first time using the app, or if you have no items left to buy, you'll be greeting with an image and welcome paragraph.  
+![Welcome view for new user](./screenshots/welcome-new-user.png) ![Welcome view for existing user](./screenshots/welcome-existing-user.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Add a shopping item
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Click the 'Add item' button.
+- Enter a valid name and price. (The 'Create item' button will remain disabled until you have entered valid inputs.)
+- Click the 'Create item' button.  
+  ![Form showing errors](./screenshots/item-form-error.png) ![Form showing valid inputs](./screenshots/item-form-valid.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Mark a shopping item as bought
 
-## Learn More
+- Click an item to mark it as bought. This will hide it from the default view.
+- Toggle between viewing and hiding the list of bought items.  
+  ![Viewing bought items](./screenshots/bought-items.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Sort items
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Click on the desired sort option to sort the list by ascending name or price  
+  ![Listed sorted by name](./screenshots/list-sorted-name.png) ![Listed sorted by price](./screenshots/list-sorted-price.png)
+
+## Authors and acknowledgments
+
+Coded by En-Chi Liu as part of the summer course at Novare Potential Academy.
+
+Many thanks to Eduardo Alvarez (Tech Education Team Lead at Novare Potential) for the project brief and mentoring.
+
+### Image credits
+
+Welcome image by [Manja Vitolic at Unsplash](https://unsplash.com/@madhatterzone).  
+Closed and open eye icons are by Font Awesome and are [licensed under the Creative Commons Attribution 4.0 International license](https://fontawesome.com/license).

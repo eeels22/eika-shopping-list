@@ -1,0 +1,48 @@
+.Item {
+  list-style-type: none;
+  margin: 2em 0;
+  text-align: left;
+}
+
+/* Custom checkbox label*/
+.item-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.item-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Custom checkbox */
+.checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1em;
+  width: 1em;
+  border: var(--color-medium-grey) 2px solid;
+  border-radius: 2px;
+}
+
+/* On mouse-over, change checkbox background */
+.item-label:hover input ~ .checkbox,
+.item-label:hover input:checked ~ .checkbox {
+  background-color: var(--color-light-grey);
+}
+
+/* When checked, change background */
+.item-label input:checked ~ .checkbox {
+  background-color: var(--color-medium-grey);
+}

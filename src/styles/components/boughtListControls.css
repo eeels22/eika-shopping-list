@@ -1,0 +1,5 @@
+.BoughtListControls {
+  justify-self: start;
+  display: grid;
+  width: 100%;
+}

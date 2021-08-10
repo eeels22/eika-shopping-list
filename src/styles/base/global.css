@@ -1,0 +1,22 @@
+/* Typography
+----------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+html {
+  font-family: "Noto Sans", sans-serif;
+  font-size: var(--font-size-medium);
+}
+
+h1 {
+  font-size: var(--font-size-big);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+
+p {
+  margin-top: 1rem;
+}
