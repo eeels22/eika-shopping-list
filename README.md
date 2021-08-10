@@ -18,7 +18,7 @@ You can:
 
 ### Hosted app
 
-The app is hosted at https://eika-shopping-list-app.web.app/
+The app is hosted at https://eika-shopping-list-ts.web.app
 
 ## Design prototype
 
