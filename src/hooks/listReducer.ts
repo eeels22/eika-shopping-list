@@ -6,8 +6,8 @@ import { IItem } from "../types/IItem";
 
 // Types
 export type Action =
-  | { type: "add"; id: number; name: string; price: string; bought: boolean }
-  | { type: "markAsBought"; id: number; bought: boolean };
+  | { type: "add"; id: string; name: string; price: string; bought: boolean }
+  | { type: "markAsBought"; id: string; bought: boolean };
 
 type List = IItem[];
 

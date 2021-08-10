@@ -27,7 +27,7 @@ export const ItemForm: React.FC<ItemFormProps> = ({ toggleForm }) => {
   // Const
   const errors = getErrors(name, price);
   const isValid = Object.keys(errors).length === 0;
-  const generatedID = Date.now();
+  const generatedID = Date.now().toString();
 
   // Functions
   const handleChange = (
