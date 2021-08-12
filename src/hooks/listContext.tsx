@@ -6,11 +6,11 @@ import { ListReducer } from "./listReducer";
 import ShoppingItem from "../types/ShoppingItem";
 import { Action } from "./listReducer";
 
-// Type
-type ListContent = {
+// Interface
+interface ListContent {
   list: ShoppingItem[];
   dispatch: React.Dispatch<Action>;
-};
+}
 
 // Context object
 const ListContext = createContext<ListContent>({
@@ -32,7 +32,7 @@ try {
   initialList = [];
 }
 
-export const ListProvider: React.FC<{}> = ({ children }) => {
+export function ListProvider({ children }: React.PropsWithChildren<{}>) {
   const [list, dispatch] = useReducer(ListReducer, initialList);
 
   // update localStorage any time the list changes
@@ -45,7 +45,7 @@ export const ListProvider: React.FC<{}> = ({ children }) => {
   return (
     <ListContext.Provider value={contextValue}>{children}</ListContext.Provider>
   );
-};
+}
 
 // Custom useContext hook
 export function useList() {

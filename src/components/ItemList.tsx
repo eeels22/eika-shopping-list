@@ -23,7 +23,7 @@ export default function ItemList({ whetherBought }: ItemListProps) {
   // Guard for empty array
   if (filteredItems.length === 0) return <p>No items to show...</p>;
 
-  // Sort if required
+  // Sort items if required
   if (sortOption === "name") {
     filteredItems.sort(compareName);
   } else if (sortOption === "price") {
