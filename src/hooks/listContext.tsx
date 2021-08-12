@@ -32,7 +32,7 @@ try {
   initialList = [];
 }
 
-export const ListProvider: React.FC<{}> = ({ children }) => {
+export function ListProvider({ children }: React.PropsWithChildren<{}>) {
   const [list, dispatch] = useReducer(ListReducer, initialList);
 
   // update localStorage any time the list changes
@@ -45,7 +45,7 @@ export const ListProvider: React.FC<{}> = ({ children }) => {
   return (
     <ListContext.Provider value={contextValue}>{children}</ListContext.Provider>
   );
-};
+}
 
 // Custom useContext hook
 export function useList() {
