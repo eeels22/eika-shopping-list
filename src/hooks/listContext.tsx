@@ -6,11 +6,11 @@ import { ListReducer } from "./listReducer";
 import ShoppingItem from "../types/ShoppingItem";
 import { Action } from "./listReducer";
 
-// Type
-type ListContent = {
+// Interface
+interface ListContent {
   list: ShoppingItem[];
   dispatch: React.Dispatch<Action>;
-};
+}
 
 // Context object
 const ListContext = createContext<ListContent>({
