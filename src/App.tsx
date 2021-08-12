@@ -18,7 +18,7 @@ export default function App() {
   const [addingItem, setAddingItem] = useState(false);
 
   // Derived state
-  const toBuyList = list.filter((item: IItem) => item.bought === false);
+  const toBuyList = list.filter((item: ShoppingItem) => item.bought === false);
   const itemsToBuy = toBuyList.length !== 0;
   const newUser = list.length === 0;
 
