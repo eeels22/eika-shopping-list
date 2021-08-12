@@ -23,7 +23,11 @@ export default function BoughtListControls() {
 
   return (
     <section className="BoughtListControls">
-      <button onClick={toggleBoughtList} className="button-subtle">
+      <button
+        type="button"
+        onClick={toggleBoughtList}
+        className="button-subtle"
+      >
         <img src={iconToDisplay} alt="" className="icon" />
         {boughtItemsPrompt}
       </button>

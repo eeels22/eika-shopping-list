@@ -88,13 +88,14 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
         {touched.price && <p role="alert">{errors.price}</p>}
       </div>
       <button
+        type="submit"
         onClick={handleSubmit}
         className="button-primary create"
         disabled={!isValid}
       >
         Create item
       </button>
-      <button onClick={toggleForm} className="button-subtle">
+      <button type="button" onClick={toggleForm} className="button-subtle">
         Cancel
       </button>
     </form>

@@ -41,7 +41,7 @@ export default function App() {
       <Header />
       <main className="main-container">
         {itemsToBuy ? <SortableList /> : <Welcome newUser={newUser} />}
-        <button onClick={toggleForm} className="button-primary">
+        <button type="button" onClick={toggleForm} className="button-primary">
           Add item
         </button>
         {!newUser && <BoughtListControls />}
