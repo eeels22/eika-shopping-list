@@ -40,8 +40,7 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="main-container">
-        {!itemsToBuy && <Welcome newUser={newUser} />}
-        {itemsToBuy && <SortableList />}
+        {itemsToBuy ? <SortableList /> : <Welcome newUser={newUser} />}
         <button onClick={toggleForm} className="button-primary">
           Add item
         </button>
