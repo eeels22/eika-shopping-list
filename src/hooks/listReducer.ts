@@ -1,6 +1,3 @@
-// NPM package
-import { Reducer } from "react";
-
 // Project files
 import ShoppingItem from "../types/ShoppingItem";
 
@@ -11,7 +8,7 @@ export type Action =
 
 type List = ShoppingItem[];
 
-export const ListReducer: Reducer<List, Action> = (list, action) => {
+export function ListReducer(list: List, action: Action) {
   switch (action.type) {
     case "add":
       const { id, name, price, bought } = action;
@@ -23,4 +20,4 @@ export const ListReducer: Reducer<List, Action> = (list, action) => {
       );
     }
   }
-};
+}
