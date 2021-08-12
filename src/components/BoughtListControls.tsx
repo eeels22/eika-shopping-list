@@ -4,9 +4,9 @@ import { useState } from "react";
 // Project files
 import closedEye from "../assets/images/closed-eye.svg";
 import openEye from "../assets/images/open-eye.svg";
-import { ItemList } from "./ItemList";
+import ItemList from "./ItemList";
 
-export const BoughtListControls: React.FC<{}> = () => {
+export default function BoughtListControls() {
   // Local state
   const [showBought, setShowBougt] = useState(false);
 
@@ -23,11 +23,15 @@ export const BoughtListControls: React.FC<{}> = () => {
 
   return (
     <section className="BoughtListControls">
-      <button onClick={toggleBoughtList} className="button-subtle">
+      <button
+        type="button"
+        onClick={toggleBoughtList}
+        className="button-subtle"
+      >
         <img src={iconToDisplay} alt="" className="icon" />
         {boughtItemsPrompt}
       </button>
       {showBought && <ItemList whetherBought={true} />}
     </section>
   );
-};
+}

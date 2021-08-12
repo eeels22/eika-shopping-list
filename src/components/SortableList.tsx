@@ -1,8 +1,8 @@
 // Project files
-import { ItemList } from "./ItemList";
-import { SortOptions } from "./SortOptions";
+import ItemList from "./ItemList";
+import SortOptions from "./SortOptions";
 
-export const SortableList: React.FC<{}> = () => {
+export default function SortableList() {
   return (
     <section className="SortableList">
       <h1>Shopping list</h1>
@@ -10,4 +10,4 @@ export const SortableList: React.FC<{}> = () => {
       <ItemList whetherBought={false} />
     </section>
   );
-};
+}

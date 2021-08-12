@@ -3,12 +3,12 @@ import React, { createContext, useReducer, useEffect, useContext } from "react";
 
 //Project files
 import { ListReducer } from "./listReducer";
-import { IItem } from "../types/IItem";
+import ShoppingItem from "../types/ShoppingItem";
 import { Action } from "./listReducer";
 
 // Type
 type ListContent = {
-  list: IItem[];
+  list: ShoppingItem[];
   dispatch: React.Dispatch<Action>;
 };
 
@@ -19,9 +19,9 @@ const ListContext = createContext<ListContent>({
 });
 
 // Set the initial list from localStorage data or use an empty array
-let initialList: IItem[];
+let initialList: ShoppingItem[];
 try {
-  const storedItems = localStorage.getItem("items");
+  const storedItems = localStorage.getItem("eika-shopping-items");
   if (storedItems) {
     initialList = JSON.parse(storedItems);
   } else {
@@ -37,7 +37,7 @@ export const ListProvider: React.FC<{}> = ({ children }) => {
 
   // update localStorage any time the list changes
   useEffect(() => {
-    localStorage.setItem("items", JSON.stringify(list));
+    localStorage.setItem("eika-shopping-items", JSON.stringify(list));
   }, [list]);
 
   const contextValue = { list, dispatch };

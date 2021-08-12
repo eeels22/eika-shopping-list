@@ -2,14 +2,14 @@
 import { Reducer } from "react";
 
 // Project files
-import { IItem } from "../types/IItem";
+import ShoppingItem from "../types/ShoppingItem";
 
 // Types
 export type Action =
   | { type: "add"; id: string; name: string; price: string; bought: boolean }
   | { type: "markAsBought"; id: string; bought: boolean };
 
-type List = IItem[];
+type List = ShoppingItem[];
 
 export const ListReducer: Reducer<List, Action> = (list, action) => {
   switch (action.type) {

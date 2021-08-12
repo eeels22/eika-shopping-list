@@ -6,7 +6,7 @@ interface WelcomeProps {
   newUser: boolean;
 }
 
-export const Welcome: React.FC<WelcomeProps> = ({ newUser }) => {
+export default function Welcome({ newUser }: WelcomeProps) {
   // Components
   const newUserText = (
     <p>
@@ -38,4 +38,4 @@ export const Welcome: React.FC<WelcomeProps> = ({ newUser }) => {
       {welcomeParagraph}
     </section>
   );
-};
+}

@@ -2,13 +2,13 @@
 import { useState } from "react";
 
 // Project files
-import { Header } from "./components/Header";
-import { Welcome } from "./components/Welcome";
-import { SortableList } from "./components/SortableList";
-import { ItemForm } from "./components/ItemForm";
-import { BoughtListControls } from "./components/BoughtListControls";
+import Header from "./components/Header";
+import Welcome from "./components/Welcome";
+import SortableList from "./components/SortableList";
+import ItemForm from "./components/ItemForm";
+import BoughtListControls from "./components/BoughtListControls";
 import { useList } from "./hooks/listContext";
-import { IItem } from "./types/IItem";
+import ShoppingItem from "./types/ShoppingItem";
 
 export default function App() {
   // Global state
@@ -18,7 +18,7 @@ export default function App() {
   const [addingItem, setAddingItem] = useState(false);
 
   // Derived state
-  const toBuyList = list.filter((item: IItem) => item.bought === false);
+  const toBuyList = list.filter((item: ShoppingItem) => item.bought === false);
   const itemsToBuy = toBuyList.length !== 0;
   const newUser = list.length === 0;
 
@@ -40,9 +40,8 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="main-container">
-        {!itemsToBuy && <Welcome newUser={newUser} />}
-        {itemsToBuy && <SortableList />}
-        <button onClick={toggleForm} className="button-primary">
+        {itemsToBuy ? <SortableList /> : <Welcome newUser={newUser} />}
+        <button type="button" onClick={toggleForm} className="button-primary">
           Add item
         </button>
         {!newUser && <BoughtListControls />}

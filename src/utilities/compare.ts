@@ -1,12 +1,12 @@
 // Project files
-import { IItem } from "../types/IItem";
+import ShoppingItem from "../types/ShoppingItem";
 
-export const compareName = (a: IItem, b: IItem) =>
-  a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
+export const compareName = (itemA: ShoppingItem, itemB: ShoppingItem) =>
+  itemA.name.localeCompare(itemB.name, "sv"); // Sorts Swedish characters
 
-export const comparePrice = (a: IItem, b: IItem) =>
-  Number(a.price) > Number(b.price)
+export const comparePrice = (itemA: ShoppingItem, itemB: ShoppingItem) =>
+  Number(itemA.price) > Number(itemB.price)
     ? 1
-    : Number(b.price) > Number(a.price)
+    : Number(itemB.price) > Number(itemA.price)
     ? -1
     : 0;

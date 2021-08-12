@@ -1,23 +1,23 @@
 // Project files
-import { Item } from "./Item";
+import Item from "./Item";
 import { useList } from "../hooks/listContext";
 import { useSortOption } from "../hooks/sortOptionContext";
 import { compareName, comparePrice } from "../utilities/compare";
-import { IItem } from "../types/IItem";
+import ShoppingItem from "../types/ShoppingItem";
 
 // Interface
 interface ItemListProps {
   whetherBought: boolean;
 }
 
-export const ItemList: React.FC<ItemListProps> = ({ whetherBought }) => {
+export default function ItemList({ whetherBought }: ItemListProps) {
   // Global state
   const { list } = useList();
   const { sortOption } = useSortOption();
 
   // Derived state
   const filteredItems = list.filter(
-    (item: IItem) => item.bought === whetherBought
+    (item: ShoppingItem) => item.bought === whetherBought
   );
 
   // Guard for empty array
@@ -30,9 +30,9 @@ export const ItemList: React.FC<ItemListProps> = ({ whetherBought }) => {
     filteredItems.sort(comparePrice);
   }
   // Components
-  const itemsArray = filteredItems.map((item: IItem) => (
+  const itemsArray = filteredItems.map((item: ShoppingItem) => (
     <Item key={item.id} item={item} />
   ));
 
   return <ul className="ItemList">{itemsArray}</ul>;
-};
+}

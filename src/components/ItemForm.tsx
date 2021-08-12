@@ -15,7 +15,7 @@ interface Touched {
   price?: boolean;
 }
 
-export const ItemForm: React.FC<ItemFormProps> = ({ toggleForm }) => {
+export default function ItemForm({ toggleForm }: ItemFormProps) {
   // Global state
   const { dispatch } = useList();
 
@@ -77,7 +77,7 @@ export const ItemForm: React.FC<ItemFormProps> = ({ toggleForm }) => {
         {touched.name && <p role="alert">{errors.name}</p>}
       </div>
       <div className="form-field">
-        <label htmlFor="price">Price*</label>
+        <label htmlFor="price">Price in SEK*</label>
         <input
           type="number"
           onBlur={() => handleBlur("price")}
@@ -88,15 +88,16 @@ export const ItemForm: React.FC<ItemFormProps> = ({ toggleForm }) => {
         {touched.price && <p role="alert">{errors.price}</p>}
       </div>
       <button
+        type="submit"
         onClick={handleSubmit}
         className="button-primary create"
         disabled={!isValid}
       >
         Create item
       </button>
-      <button onClick={toggleForm} className="button-subtle">
+      <button type="button" onClick={toggleForm} className="button-subtle">
         Cancel
       </button>
     </form>
   );
-};
+}
