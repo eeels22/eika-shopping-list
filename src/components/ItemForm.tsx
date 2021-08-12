@@ -77,7 +77,7 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
         {touched.name && <p role="alert">{errors.name}</p>}
       </div>
       <div className="form-field">
-        <label htmlFor="price">Price*</label>
+        <label htmlFor="price">Price in SEK*</label>
         <input
           type="number"
           onBlur={() => handleBlur("price")}
