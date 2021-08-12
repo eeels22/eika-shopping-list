@@ -15,7 +15,7 @@ interface Touched {
   price?: boolean;
 }
 
-export const ItemForm: React.FC<ItemFormProps> = ({ toggleForm }) => {
+export default function ItemForm({ toggleForm }: ItemFormProps) {
   // Global state
   const { dispatch } = useList();
 
@@ -99,4 +99,4 @@ export const ItemForm: React.FC<ItemFormProps> = ({ toggleForm }) => {
       </button>
     </form>
   );
-};
+}

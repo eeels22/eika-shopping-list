@@ -3,14 +3,14 @@ import { useState } from "react";
 
 // Project files
 import { useList } from "../hooks/listContext";
-import { IItem } from "../types/IItem";
+import ShoppingItem from "../types/ShoppingItem";
 
 // Interface
 interface ItemProps {
-  item: IItem;
+  item: ShoppingItem;
 }
 
-export const Item: React.FC<ItemProps> = ({ item }) => {
+export default function Item({ item }: ItemProps) {
   // Global state
   const { dispatch } = useList();
 
@@ -43,4 +43,4 @@ export const Item: React.FC<ItemProps> = ({ item }) => {
       </label>
     </li>
   );
-};
+}
