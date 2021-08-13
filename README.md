@@ -1,12 +1,10 @@
 # EIKA shopping list app
 
-## Description
-
-A shopping list app that lets users keep track of things to buy at the EIKA store.
+The EIKA shopping list app lets users keep track of things to buy at the (fake) EIKA store.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the TypeScript template.
 
-### Features
+## Features
 
 You can:
 
@@ -16,7 +14,7 @@ You can:
 - Close and reopen the page without losing your list.
 - Sort items by name or price.
 
-### Hosted app
+## Hosted link
 
 The app is hosted at https://eika-shopping-list-ts.web.app
 
@@ -30,11 +28,13 @@ The app is hosted at https://eika-shopping-list-ts.web.app
 
 ## Installation
 
-Clone this repository: `git clone https://github.com/eeels22/eika-shopping-list.git`
+1. Clone this repository: `git clone https://github.com/eeels22/eika-shopping-list.git`
 
-To run the app in the development mode, in the project directory, run: `npm start`
+2. Install the dependencies. In the project directory, run: `npm install`
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Run the app in the development mode. In the project directory, run: `npm start`
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Build and deploy
 
@@ -84,5 +84,5 @@ Many thanks to Eduardo Alvarez (Tech Education Team Lead at Novare Potential) fo
 
 ### Image credits
 
-Welcome image by [Manja Vitolic at Unsplash](https://unsplash.com/@madhatterzone).  
-Closed and open eye icons are by Font Awesome and are [licensed under the Creative Commons Attribution 4.0 International license](https://fontawesome.com/license).
+- Welcome image by [Manja Vitolic at Unsplash](https://unsplash.com/@madhatterzone).
+- Closed and open eye icons are by Font Awesome and are [licensed under the Creative Commons Attribution 4.0 International license](https://fontawesome.com/license).
