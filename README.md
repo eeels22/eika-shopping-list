@@ -24,7 +24,15 @@ The app is hosted at https://eika-shopping-list-ts.web.app
 
 ## Component hierarchy
 
-[View the component hierarchy at Whimsical.](https://whimsical.com/shopping-list-KTu2Z8eFMtf9E3psbzR2Xm@2Ux7TurymMSmk6jWXHKT)
+[View the component hierarchy at Whimsical.](https://whimsical.com/shopping-list-KTu2Z8eFMtf9E3psbzR2Xm@2Ux7TurymMSmk6jWXHKT)¨
+
+## Pre-requisites
+
+You need to have the following installed before you can install and run this project:
+
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Node.js](https://nodejs.org/en/download/)
+- An IDE (Integrated development environment), e.g. [Visual Studio Code](https://code.visualstudio.com/download)
 
 ## Installation
 
