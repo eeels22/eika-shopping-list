@@ -32,10 +32,10 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
   // Functions
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
-    inputReference: string
+    reference: string
   ) => {
-    if (inputReference === "name") setName(event.target.value);
-    if (inputReference === "price") setPrice(event.target.value);
+    if (reference === "nameInput") setName(event.target.value);
+    if (reference === "priceInput") setPrice(event.target.value);
   };
 
   const handleBlur = (inputReference: string) => {
@@ -51,7 +51,7 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
         type: "add",
         id: generatedID,
         name: name.trim().toUpperCase(),
-        price,
+        price: parseInt(price),
         bought: false,
       });
       setName("");
@@ -68,7 +68,7 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
         <label htmlFor="name">Name*</label>
         <input
           type="text"
-          onChange={(event) => handleChange(event, "name")}
+          onChange={(event) => handleChange(event, "nameInput")}
           onBlur={() => handleBlur("name")}
           value={name}
           placeholder="e.g. VÖXLOV"
@@ -81,7 +81,7 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
         <input
           type="number"
           onBlur={() => handleBlur("price")}
-          onChange={(event) => handleChange(event, "price")}
+          onChange={(event) => handleChange(event, "priceInput")}
           value={price}
           placeholder="e.g. 120"
         />

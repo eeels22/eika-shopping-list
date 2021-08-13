@@ -1,6 +1,6 @@
 export default interface ShoppingItem {
   name: string;
-  price: string;
+  price: number;
   bought: boolean;
   id: string;
 }
