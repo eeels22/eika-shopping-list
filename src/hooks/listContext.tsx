@@ -28,7 +28,9 @@ try {
     initialList = [];
   }
 } catch (err) {
-  console.error("The items could not be parsed into JSON");
+  alert(
+    "Sorry! An error occurred when loading your items and your list has been reset."
+  );
   initialList = [];
 }
 
