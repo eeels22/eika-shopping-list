@@ -22,8 +22,8 @@ export const getErrors = (name: string, price: string) => {
   } else if (!validName(name)) {
     result.name = "Enter a valid name.";
   }
-  if (!price) {
-    result.price = "Price is required.";
+  if (!price || price === "0") {
+    result.price = "Enter a valid price.";
   } else if (!validPrice(price)) {
     result.price = "Price may only contain digits 0 to 9.";
   }
