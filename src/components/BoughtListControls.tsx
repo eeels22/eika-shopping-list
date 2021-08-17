@@ -11,6 +11,10 @@ export default function BoughtListControls() {
   const [showBought, setShowBougt] = useState(false);
 
   // Functions
+  // you use functions in App.tsx but const here.
+  // for consistency only use one method. In this case, use functions because it makes easy to indentify them in VS code outline mode (i will explain this in the lectures)
+  // also this should go after the contants declared below (hoisting) properties always go on top.
+  // -1
   const toggleBoughtList = () =>
     setShowBougt((showBoughtItems) => !showBoughtItems);
 
