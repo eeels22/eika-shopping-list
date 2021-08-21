@@ -19,7 +19,7 @@ export default function Item({ item }: ItemProps) {
     dispatch({
       type: "markAsBought",
       id,
-      bought: bought, // !itemBought or !bought from the destructured item <= to send the inverted version regardless if is currently true or false
+      bought: bought, // QUESTION: invert boolean here or in reducer?
     });
   };
 
