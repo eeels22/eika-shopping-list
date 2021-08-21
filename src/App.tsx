@@ -20,10 +20,6 @@ export default function App() {
   // Derived state
   const toBuyList = list.filter((item: ShoppingItem) => item.bought === false);
   const itemsToBuy = toBuyList.length !== 0;
-  // another small detail, you can get away with using list.length === 0 in the jsx but is valid either way.
-  // use a variable for this, if the statement is to long and want to make it shorter. Example:
-  // const newUser = listOfItems.length === obtainCurrentListOfUsers(database(myLocalDatabase))
-  // in that case yes, please use the contast newUser to make it easy to read.
   const newUser = list.length === 0;
 
   // Functions
