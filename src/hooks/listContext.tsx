@@ -2,9 +2,8 @@
 import React, { createContext, useReducer, useEffect, useContext } from "react";
 
 //Project files
-import { ListReducer } from "./listReducer";
+import { Action, ListReducer } from "./listReducer";
 import ShoppingItem from "../types/ShoppingItem";
-import { Action } from "./listReducer";
 
 // Interface
 interface ListContent {
