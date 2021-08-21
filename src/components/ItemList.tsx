@@ -21,10 +21,11 @@ export default function ItemList({ whetherBought }: ItemListProps) {
   );
 
   // Sort items if required
-  // the else if should be a else or if. if else if, feel weird withouth a final "else" acting as a default case.
   if (sortOption === "name") {
     filteredItems.sort(compareName);
-  } else if (sortOption === "price") {
+  }
+
+  if (sortOption === "price") {
     filteredItems.sort(comparePrice);
   }
 
