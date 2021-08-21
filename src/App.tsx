@@ -27,11 +27,8 @@ export default function App() {
   const newUser = list.length === 0;
 
   // Functions
-  // toggling a boolean can be done directly from the event
-  // you dont need the long way of writting the setter with the "current state" => "new state" 99.99% of the time for basic data types like strings, bools and numbers.
-  // leave that for more complex data types like objecs, arrays and arrays of objects.
   const toggleForm = () => {
-    setAddingItem((addingItem) => !addingItem);
+    setAddingItem(!addingItem);
   };
 
   // This is 100% valid code, but try to make the early returns 1 line.
