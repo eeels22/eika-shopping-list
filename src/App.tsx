@@ -2,11 +2,10 @@
 import { useState } from "react";
 
 // Project files
-// small nitpicking, put the imports in the same oder that they appear on the component folder, so Sortable goes before Welcome
 import BoughtListControls from "./components/BoughtListControls";
 import Header from "./components/Header";
-import SortableList from "./components/SortableList";
 import ItemForm from "./components/ItemForm";
+import SortableList from "./components/SortableList";
 import Welcome from "./components/Welcome";
 import { useList } from "./hooks/listContext";
 import ShoppingItem from "./types/ShoppingItem";
