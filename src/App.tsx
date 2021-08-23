@@ -22,11 +22,6 @@ export default function App() {
   const itemsToBuy = toBuyList.length !== 0;
   const newUser = list.length === 0;
 
-  // Functions
-  const toggleForm = () => {
-    setAddingItem(!addingItem);
-  };
-
   // This is 100% valid code, but try to make the early returns 1 line.
   // for example this can be converted to "ModalForm.jsx" to have it like
   // if (addingItem) return <ModalForm toggleForm={toggleForm} />
@@ -35,7 +30,7 @@ export default function App() {
     return (
       <div className="App">
         <Header />
-        <ItemForm toggleForm={toggleForm} />
+        <ItemForm toggleForm={() => setAddingItem(!addingItem)} />
       </div>
     );
 
@@ -45,7 +40,11 @@ export default function App() {
       <Header />
       <main className="main-container">
         {itemsToBuy ? <SortableList /> : <Welcome newUser={newUser} />}
-        <button type="button" onClick={toggleForm} className="button-primary">
+        <button
+          type="button"
+          onClick={() => setAddingItem(!addingItem)}
+          className="button-primary"
+        >
           Add item
         </button>
         {!newUser && <BoughtListControls />}
