@@ -1,5 +1,11 @@
 export type Action =
-  | { type: "add"; id: string; name: string; price: number; bought: boolean }
+  | {
+      type: "addItem";
+      id: string;
+      name: string;
+      price: number;
+      bought: boolean;
+    }
   | {
       type: "editItem";
       id: string;

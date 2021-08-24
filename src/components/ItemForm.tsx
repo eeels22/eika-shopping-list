@@ -41,7 +41,7 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
 
     if (isValid) {
       dispatch({
-        type: "add",
+        type: "addItem",
         id: generatedID,
         name: name.trim().toUpperCase(),
         price: parseInt(price),

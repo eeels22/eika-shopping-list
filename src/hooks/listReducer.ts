@@ -4,7 +4,7 @@ import ShoppingItem from "../types/ShoppingItem";
 
 export function ListReducer(list: ShoppingItem[], action: Action) {
   switch (action.type) {
-    case "add": {
+    case "addItem": {
       const { id, name, price, bought } = action;
       return [...list, { id, name, price, bought }];
     }
