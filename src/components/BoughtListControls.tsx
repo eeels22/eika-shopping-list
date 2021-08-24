@@ -8,11 +8,7 @@ import ItemList from "./ItemList";
 
 export default function BoughtListControls() {
   // Local state
-  const [showBought, setShowBougt] = useState(false);
-
-  // Functions
-  const toggleBoughtList = () =>
-    setShowBougt((showBoughtItems) => !showBoughtItems);
+  const [showBought, setShowBought] = useState(false);
 
   // Const
   const boughtItemsPrompt = showBought
@@ -25,7 +21,7 @@ export default function BoughtListControls() {
     <section className="BoughtListControls">
       <button
         type="button"
-        onClick={toggleBoughtList}
+        onClick={() => setShowBought(!showBought)}
         className="button-subtle"
       >
         <img src={iconToDisplay} alt="" className="icon" />

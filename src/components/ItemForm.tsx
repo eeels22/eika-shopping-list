@@ -3,17 +3,9 @@ import React, { useState } from "react";
 
 // Project files
 import { useList } from "../hooks/listContext";
-import { getErrors } from "../utilities/formValidation";
-
-// Interfaces
-interface ItemFormProps {
-  toggleForm: () => void;
-}
-
-interface Touched {
-  name?: boolean;
-  price?: boolean;
-}
+import ItemFormProps from "../types/ItemFormProps";
+import Touched from "../types/Touched";
+import getErrors from "../utilities/formValidation";
 
 export default function ItemForm({ toggleForm }: ItemFormProps) {
   // Global state
@@ -30,25 +22,26 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
   const generatedID = Date.now().toString();
 
   // Functions
-  const handleChange = (
+  function handleChange(
     event: React.ChangeEvent<HTMLInputElement>,
     reference: string
-  ) => {
+  ) {
     if (reference === "nameInput") setName(event.target.value);
     if (reference === "priceInput") setPrice(event.target.value);
-  };
+  }
 
-  const handleBlur = (inputReference: string) => {
+  function handleBlur(inputReference: string) {
     setTouched((current) => {
       return { ...current, [inputReference]: true };
     });
-  };
+  }
 
-  const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+  function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
+
     if (isValid) {
       dispatch({
-        type: "add",
+        type: "addItem",
         id: generatedID,
         name: name.trim().toUpperCase(),
         price: parseInt(price),
@@ -58,7 +51,7 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
       setPrice("");
       toggleForm();
     }
-  };
+  }
 
   return (
     <form className="ItemForm">

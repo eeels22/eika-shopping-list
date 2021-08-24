@@ -2,11 +2,11 @@
 import { useState } from "react";
 
 // Project files
-import Header from "./components/Header";
-import Welcome from "./components/Welcome";
-import SortableList from "./components/SortableList";
-import ItemForm from "./components/ItemForm";
 import BoughtListControls from "./components/BoughtListControls";
+import Header from "./components/Header";
+import ItemForm from "./components/ItemForm";
+import SortableList from "./components/SortableList";
+import Welcome from "./components/Welcome";
 import { useList } from "./hooks/listContext";
 import ShoppingItem from "./types/ShoppingItem";
 
@@ -18,21 +18,17 @@ export default function App() {
   const [addingItem, setAddingItem] = useState(false);
 
   // Derived state
-  const toBuyList = list.filter((item: ShoppingItem) => item.bought === false);
-  const itemsToBuy = toBuyList.length !== 0;
-  const newUser = list.length === 0;
+  const pendingList = list.filter(
+    (item: ShoppingItem) => item.bought === false
+  );
+  const pendingItemsExist = pendingList.length !== 0;
+  const isNewUser = list.length === 0;
 
-  // Functions
-  const toggleForm = () => {
-    setAddingItem((addingItem) => !addingItem);
-  };
-
-  // Early return - show item form if adding item
   if (addingItem)
     return (
       <div className="App">
         <Header />
-        <ItemForm toggleForm={toggleForm} />
+        <ItemForm toggleForm={() => setAddingItem(!addingItem)} />
       </div>
     );
 
@@ -40,11 +36,19 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="main-container">
-        {itemsToBuy ? <SortableList /> : <Welcome newUser={newUser} />}
-        <button type="button" onClick={toggleForm} className="button-primary">
+        {pendingItemsExist ? (
+          <SortableList />
+        ) : (
+          <Welcome isNewUser={isNewUser} />
+        )}
+        <button
+          type="button"
+          onClick={() => setAddingItem(!addingItem)}
+          className="button-primary"
+        >
           Add item
         </button>
-        {!newUser && <BoughtListControls />}
+        {!isNewUser && <BoughtListControls />}
       </main>
     </div>
   );

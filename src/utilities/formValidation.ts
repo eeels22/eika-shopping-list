@@ -1,3 +1,6 @@
+// Project files
+import ErrorResult from "../types/ErrorResult";
+
 // Helper functions
 const validPrice = (value: string) => {
   const containsOnlyDigits = /^\d+$/.test(value);
@@ -9,14 +12,8 @@ const validName = (value: string) => {
   return isNotOnlyWhitespace;
 };
 
-// Interface
-interface Result {
-  name?: string;
-  price?: string;
-}
-
-export const getErrors = (name: string, price: string) => {
-  const result: Result = {};
+export default function getErrors(name: string, price: string) {
+  const result: ErrorResult = {};
   if (!name) {
     result.name = "Name is required.";
   } else if (!validName(name)) {
@@ -28,4 +25,4 @@ export const getErrors = (name: string, price: string) => {
     result.price = "Price may only contain digits 0 to 9.";
   }
   return result;
-};
+}

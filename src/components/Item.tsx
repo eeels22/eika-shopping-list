@@ -1,37 +1,29 @@
-// NPM package
-import { useState } from "react";
-
 // Project files
 import { useList } from "../hooks/listContext";
-import ShoppingItem from "../types/ShoppingItem";
-
-// Interface
-interface ItemProps {
-  item: ShoppingItem;
-}
+import ItemProps from "../types/ItemProps";
 
 export default function Item({ item }: ItemProps) {
   // Global state
   const { dispatch } = useList();
 
-  // Local state
-  const [bought, setBought] = useState(item.bought);
+  // Consts
+  const { id, name, price, bought } = item;
 
   // Functions
-  const handleClick = () => {
-    setBought((bought) => !bought);
+  function handleClick() {
     dispatch({
-      type: "markAsBought",
-      id: item.id,
-      bought: item.bought,
+      type: "editItem",
+      id,
+      key: "bought",
+      value: !bought,
     });
-  };
+  }
 
   return (
     <li className="Item">
       <label className="item-label">
         <input
-          id={item.id}
+          id={id}
           type="checkbox"
           onChange={handleClick}
           className="item-checkbox"
@@ -39,7 +31,7 @@ export default function Item({ item }: ItemProps) {
           checked={bought}
         />
         <span className="checkbox"></span>
-        {item.name}, {item.price}:-
+        {name}, {price}:-
       </label>
     </li>
   );

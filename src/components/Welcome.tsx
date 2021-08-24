@@ -1,12 +1,8 @@
 // Project files
 import WelcomeImage from "../assets/images/wall-decorations.jpg";
+import WelcomeProps from "../types/WelcomeProps";
 
-// Interface
-interface WelcomeProps {
-  newUser: boolean;
-}
-
-export default function Welcome({ newUser }: WelcomeProps) {
+export default function Welcome({ isNewUser }: WelcomeProps) {
   // Components
   const newUserText = (
     <p>
@@ -25,7 +21,7 @@ export default function Welcome({ newUser }: WelcomeProps) {
     </p>
   );
 
-  const welcomeParagraph = newUser ? newUserText : returningUserText;
+  const welcomeParagraph = isNewUser ? newUserText : returningUserText;
 
   return (
     <section className="welcome-container">
