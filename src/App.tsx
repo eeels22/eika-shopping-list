@@ -20,7 +20,7 @@ export default function App() {
   // Derived state
   const toBuyList = list.filter((item: ShoppingItem) => item.bought === false);
   const itemsToBuy = toBuyList.length !== 0;
-  const newUser = list.length === 0;
+  const isNewUser = list.length === 0;
 
   // This is 100% valid code, but try to make the early returns 1 line.
   // for example this can be converted to "ModalForm.jsx" to have it like
@@ -39,7 +39,7 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="main-container">
-        {itemsToBuy ? <SortableList /> : <Welcome newUser={newUser} />}
+        {itemsToBuy ? <SortableList /> : <Welcome isNewUser={isNewUser} />}
         <button
           type="button"
           onClick={() => setAddingItem(!addingItem)}
@@ -47,7 +47,7 @@ export default function App() {
         >
           Add item
         </button>
-        {!newUser && <BoughtListControls />}
+        {!isNewUser && <BoughtListControls />}
       </main>
     </div>
   );
