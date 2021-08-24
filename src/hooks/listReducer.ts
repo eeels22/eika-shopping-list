@@ -14,5 +14,9 @@ export function ListReducer(list: ShoppingItem[], action: Action) {
         item.id === id ? { ...item, [key]: value } : item
       );
     }
+    case "replaceList": {
+      const { newList } = action;
+      return [...newList];
+    }
   }
 }

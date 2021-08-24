@@ -1,12 +1,12 @@
 // Project files
 import ItemList from "./ItemList";
-import SortOptions from "./SortOptions";
+import Sorter from "./Sorter";
 
 export default function SortableList() {
   return (
     <section className="SortableList">
       <h1>Shopping list</h1>
-      <SortOptions />
+      <Sorter />
       <ItemList whetherBought={false} />
     </section>
   );

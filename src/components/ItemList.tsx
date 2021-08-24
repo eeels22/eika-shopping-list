@@ -1,29 +1,17 @@
 // Project files
 import Item from "./Item";
 import { useList } from "../hooks/listContext";
-import { useSortOption } from "../hooks/sortOptionContext";
 import ItemListProps from "../types/ItemListProps";
-import { compareName, comparePrice } from "../utilities/compare";
 import ShoppingItem from "../types/ShoppingItem";
 
 export default function ItemList({ whetherBought }: ItemListProps) {
   // Global state
   const { list } = useList();
-  const { sortOption } = useSortOption();
 
   // Derived state
   const filteredItems = list.filter(
     (item: ShoppingItem) => item.bought === whetherBought
   );
-
-  // Sort items if required
-  if (sortOption === "name") {
-    filteredItems.sort(compareName);
-  }
-
-  if (sortOption === "price") {
-    filteredItems.sort(comparePrice);
-  }
 
   // Components
   const itemsArray = filteredItems.map((item: ShoppingItem) => (
