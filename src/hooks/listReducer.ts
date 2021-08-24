@@ -1,14 +1,8 @@
 // Project files
+import { Action } from "../types/Action";
 import ShoppingItem from "../types/ShoppingItem";
 
-// Types
-export type Action =
-  | { type: "add"; id: string; name: string; price: number; bought: boolean }
-  | { type: "markAsBought"; id: string; bought: boolean };
-
-type List = ShoppingItem[];
-
-export function ListReducer(list: List, action: Action) {
+export function ListReducer(list: ShoppingItem[], action: Action) {
   switch (action.type) {
     case "add":
       const { id, name, price, bought } = action;

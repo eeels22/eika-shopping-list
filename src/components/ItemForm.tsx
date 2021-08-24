@@ -3,17 +3,9 @@ import React, { useState } from "react";
 
 // Project files
 import { useList } from "../hooks/listContext";
+import ItemFormProps from "../types/ItemFormProps";
+import Touched from "../types/Touched";
 import getErrors from "../utilities/formValidation";
-
-// Interfaces
-interface ItemFormProps {
-  toggleForm: () => void;
-}
-
-interface Touched {
-  name?: boolean;
-  price?: boolean;
-}
 
 export default function ItemForm({ toggleForm }: ItemFormProps) {
   // Global state

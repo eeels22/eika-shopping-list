@@ -2,14 +2,9 @@
 import React, { createContext, useReducer, useEffect, useContext } from "react";
 
 //Project files
-import { Action, ListReducer } from "./listReducer";
+import { ListReducer } from "./listReducer";
+import ListContent from "../types/ListContent";
 import ShoppingItem from "../types/ShoppingItem";
-
-// Interface
-interface ListContent {
-  list: ShoppingItem[];
-  dispatch: React.Dispatch<Action>;
-}
 
 // Context object
 const ListContext = createContext<ListContent>({

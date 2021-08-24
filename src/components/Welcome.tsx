@@ -1,10 +1,6 @@
 // Project files
 import WelcomeImage from "../assets/images/wall-decorations.jpg";
-
-// Interface
-interface WelcomeProps {
-  isNewUser: boolean;
-}
+import WelcomeProps from "../types/WelcomeProps";
 
 export default function Welcome({ isNewUser }: WelcomeProps) {
   // Components

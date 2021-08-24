@@ -7,14 +7,11 @@
 // NPM packages
 import { createContext, useState, useContext } from "react";
 
-// Interface
-interface SortOptionContextType {
-  sortOption: string;
-  updateSortOption: (sortOption: string) => void;
-}
+// Project file
+import SortOptionContent from "../types/SortOptionContent";
 
 // Context object
-const SortOptionContext = createContext<SortOptionContextType | null>(null);
+const SortOptionContext = createContext<SortOptionContent | null>(null);
 
 export function SortOptionProvider({ children }: React.PropsWithChildren<{}>) {
   // Local state

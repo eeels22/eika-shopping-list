@@ -1,11 +1,6 @@
 // Project files
 import { useList } from "../hooks/listContext";
-import ShoppingItem from "../types/ShoppingItem";
-
-// Interface
-interface ItemProps {
-  item: ShoppingItem;
-}
+import ItemProps from "../types/ItemProps";
 
 export default function Item({ item }: ItemProps) {
   // Global state

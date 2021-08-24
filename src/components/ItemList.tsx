@@ -2,13 +2,9 @@
 import Item from "./Item";
 import { useList } from "../hooks/listContext";
 import { useSortOption } from "../hooks/sortOptionContext";
+import ItemListProps from "../types/ItemListProps";
 import { compareName, comparePrice } from "../utilities/compare";
 import ShoppingItem from "../types/ShoppingItem";
-
-// Interface
-interface ItemListProps {
-  whetherBought: boolean;
-}
 
 export default function ItemList({ whetherBought }: ItemListProps) {
   // Global state
