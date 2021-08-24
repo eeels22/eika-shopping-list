@@ -11,39 +11,35 @@ export default function Sorter() {
   const { list, dispatch } = useList();
 
   // Local state
-  const [sortOrder, setSortOrder] = useState("");
+  const [sortOption, setSortOption] = useState("");
 
-  // Functions
-  function sortListByName(list: ShoppingItem[]) {
-    const sortedList = [...list].sort(compareName);
-    setSortOrder("name");
+  // Function
+  function sortList(
+    list: ShoppingItem[],
+    sortOption: string,
+    comparator: (itemA: ShoppingItem, itemB: ShoppingItem) => number
+  ) {
+    const sortedList = [...list].sort(comparator);
+    setSortOption(sortOption);
     dispatch({
       type: "replaceList",
       newList: sortedList,
     });
   }
 
-  function sortListByPrice(list: ShoppingItem[]) {
-    const sortedList = [...list].sort(comparePrice);
-    setSortOrder("price");
-    dispatch({
-      type: "replaceList",
-      newList: sortedList,
-    });
-  }
   return (
     <section className="sort-options">
       <span>Sort by:</span>
       <button
-        onClick={() => sortListByName(list)}
-        disabled={sortOrder === "name"}
+        onClick={() => sortList(list, "name", compareName)}
+        disabled={sortOption === "name"}
         className="button-option"
       >
         Name
       </button>
       <button
-        onClick={() => sortListByPrice(list)}
-        disabled={sortOrder === "price"}
+        onClick={() => sortList(list, "price", comparePrice)}
+        disabled={sortOption === "price"}
         className="button-option"
       >
         Price
