@@ -21,10 +21,10 @@ export function SortOptionProvider({ children }: React.PropsWithChildren<{}>) {
   const [sortOption, setSortOption] = useState("");
 
   // Function
-  const updateSortOption = (sortOption: string) => {
+  function updateSortOption(sortOption: string) {
     const newOption = sortOption === "name" ? "price" : "name";
     setSortOption(newOption);
-  };
+  }
 
   const contextValue = { sortOption, updateSortOption };
 

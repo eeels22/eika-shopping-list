@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 // Project files
 import { useList } from "../hooks/listContext";
-import { getErrors } from "../utilities/formValidation";
+import getErrors from "../utilities/formValidation";
 
 // Interfaces
 interface ItemFormProps {
@@ -30,21 +30,21 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
   const generatedID = Date.now().toString();
 
   // Functions
-  const handleChange = (
+  function handleChange(
     event: React.ChangeEvent<HTMLInputElement>,
     reference: string
-  ) => {
+  ) {
     if (reference === "nameInput") setName(event.target.value);
     if (reference === "priceInput") setPrice(event.target.value);
-  };
+  }
 
-  const handleBlur = (inputReference: string) => {
+  function handleBlur(inputReference: string) {
     setTouched((current) => {
       return { ...current, [inputReference]: true };
     });
-  };
+  }
 
-  const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+  function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
 
     if (isValid) {
@@ -59,7 +59,7 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
       setPrice("");
       toggleForm();
     }
-  };
+  }
 
   return (
     <form className="ItemForm">

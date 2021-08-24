@@ -15,13 +15,13 @@ export default function Item({ item }: ItemProps) {
   const { id, name, price, bought } = item;
 
   // Functions
-  const handleClick = () => {
+  function handleClick() {
     dispatch({
       type: "markAsBought",
       id,
       bought: bought, // QUESTION: invert boolean here or in reducer?
     });
-  };
+  }
 
   return (
     <li className="Item">

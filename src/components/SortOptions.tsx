@@ -6,7 +6,9 @@ export default function SortOptions() {
   const { sortOption, updateSortOption } = useSortOption();
 
   // Function
-  const disableSortOption = (buttonName: string) => sortOption === buttonName;
+  function disableSortOption(buttonName: string) {
+    return sortOption === buttonName;
+  }
 
   return (
     <section className="sort-options">
