@@ -4,13 +4,14 @@ import ShoppingItem from "../types/ShoppingItem";
 
 export function ListReducer(list: ShoppingItem[], action: Action) {
   switch (action.type) {
-    case "add":
+    case "add": {
       const { id, name, price, bought } = action;
       return [...list, { id, name, price, bought }];
-    case "markAsBought": {
-      const { id, bought } = action;
+    }
+    case "editItem": {
+      const { id, key, value } = action;
       return list.map((item) =>
-        item.id === id ? { ...item, bought: !bought } : item
+        item.id === id ? { ...item, [key]: value } : item
       );
     }
   }

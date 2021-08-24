@@ -12,9 +12,10 @@ export default function Item({ item }: ItemProps) {
   // Functions
   function handleClick() {
     dispatch({
-      type: "markAsBought",
+      type: "editItem",
       id,
-      bought: bought, // QUESTION: invert boolean here or in reducer?
+      key: "bought",
+      value: !bought,
     });
   }
 
