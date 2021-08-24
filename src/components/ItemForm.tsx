@@ -57,8 +57,6 @@ export default function ItemForm({ toggleForm }: ItemFormProps) {
     <form className="ItemForm">
       <h1>Add an item</h1>
       <small className="legend">*required fields</small>
-
-      {/* Form field must be refactored as a separate component because is the same as price -1 */}
       <div className="form-field">
         <label htmlFor="name">Name*</label>
         <input

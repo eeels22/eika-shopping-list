@@ -24,10 +24,6 @@ export default function App() {
   const pendingItemsExist = pendingList.length !== 0;
   const isNewUser = list.length === 0;
 
-  // This is 100% valid code, but try to make the early returns 1 line.
-  // for example this can be converted to "ModalForm.jsx" to have it like
-  // if (addingItem) return <ModalForm toggleForm={toggleForm} />
-  // Early return - show item form if adding item
   if (addingItem)
     return (
       <div className="App">
@@ -36,7 +32,6 @@ export default function App() {
       </div>
     );
 
-  // nice and clean JSX
   return (
     <div className="App">
       <Header />
